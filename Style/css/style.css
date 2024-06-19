@@ -1,0 +1,456 @@
+/* Variables: These are the colors and fonts we will use throughout the site */
+:root {
+  --white: #ffffff; /* Pure white color */
+  --dark-red: #782221; /* Dark red color */
+  --sand: #f5d3aa; /* Sand color */
+  --dark-brown: #2c1d27; /* Dark brown color */
+  --font-title: "Lato", sans-serif; /* Font for titles */
+  --raleway-bold: "Raleway-Bold", sans-serif; /* Bold version of Raleway font */
+  --raleway-regular: "Raleway-Regular", sans-serif; /* Regular version of Raleway font */
+  --lato-bold: "Lato-Bold", sans-serif; /* Bold version of Lato font */
+  --lato-regular: "Lato-Regular", sans-serif; /* Regular version of Lato font */
+}
+
+/* Font Faces: Here we import the fonts we will use in the site */
+@font-face {
+  font-family: var(--raleway-bold);
+  src: url("./Fonts/Raleway/Raleway-Bold.ttf");
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: var(--raleway-italic);
+  src: url("./Fonts/Raleway/Raleway-Italic.ttf");
+  font-style: italic;
+}
+
+@font-face {
+  font-family: var(--raleway-regular);
+  src: url("./Fonts/Raleway/Raleway-Regular.ttf");
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: var(--lato-bold);
+  src: url("./Fonts/Lato/Lato-Bold.ttf");
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: var(--lato-italic);
+  src: url("./Fonts/Lato/Lato-Italic.ttf");
+  font-style: italic;
+}
+
+@font-face {
+  font-family: var(--lato-regular);
+  src: url("./Fonts/Lato/Lato-Regular.ttf");
+  font-weight: normal;
+}
+* {
+    box-sizing: border-box;
+}
+
+
+/* General Styles: These styles apply to the entire site */
+body {
+  font-family: var(--font-title);
+  background-color: var(--sand);
+  margin: 0;
+  padding: 0;
+}
+.cv,
+.cv__footer,
+.cv__main {
+  max-width: 1160px;
+  margin: 0 auto;
+}
+
+/* =================================================================================== */
+/* =========================== HEADER CONTAINER CONTAINER =========================== */
+/* =================================================================================== */
+.cv {
+  padding: 0;
+  background-color: var(--white);
+  border-radius: 3px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  display: flex;
+  min-height: 50vh;
+  flex-direction: column;
+}
+
+/* Header: This is the header of the site */
+.cv__header {
+  background-color: var(--dark-red);
+  min-height: 30vh;
+  width: 100%;
+}
+
+/* Top Part of Header: This is where the profile picture and name will be displayed */
+.cv__header-top {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin-top: 3em;
+}
+
+.cv__header-top img {
+  max-height: 70%;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  border-radius: 50%;
+}
+
+/* =============================================================================== */
+/* ===========================  NAVIGATION SECTION =============================== */
+/* =============================================================================== */
+.cv__nav {
+  display: inline-block;
+  background-color: var(--dark-brown);
+  min-height: 3vh;
+  width: 100%;
+}
+
+.cv__nav-list {
+  list-style: none;
+  text-align: center;
+}
+
+.cv__nav-item {
+  display: inline;
+  margin: 6em;
+  font-size: 1rem;
+  font-weight: bold;
+  color: var(--sand);
+}
+
+.cv__nav-link {
+  text-decoration: none;
+  color: var(--sand);
+}
+
+.cv__nav-link:hover {
+  text-decoration: underline;
+}
+
+/* Header Title: This is the name of the person */
+.cv__name {
+  color: var(--sand);
+}
+
+/* Header Paragraph: This is the title job of the person */
+.cv__title {
+  color: var(--sand);
+  font-size: 1.5rem;
+  margin-top: 0;
+}
+
+/* Header Image: This is the profile picture */
+.cv__header img {
+  height: 200px;
+  cursor: zoom-in;
+}
+
+/* =============================================================================== */
+/* ===============================  MAIN SECTION ================================= */
+/* =============================================================================== */
+.cv__main {
+  display: flex;
+  min-height: 70vh;
+}
+
+
+/* =============================================================================== */
+/* =============================  ARTICLE SECTION ================================ */
+/* =============================================================================== */
+.cv__content {
+  width: 65%;
+  background-color: var(--white);
+  display: flex;
+  flex-direction: column;
+}
+
+.cv__experience,
+.cv__education,
+.cv__skills {
+  margin: 0 1em 0 3em;
+}
+
+
+.cv__experience-title,
+.cv__education-title,
+.cv__skills-title,
+.cv__sidebar-title {
+  font-family: var(--lato-bold);
+}
+
+.cv__experience-text,
+.cv__experience-item,
+.cv__sidebar-text,
+.cv__sidebar-item {
+  font-family: var(--raleway-regular);
+}
+
+.cv__experience-title,
+.cv__education-title,
+.cv__skills-title {
+  background-color: var(--sand);
+  padding: 0.5em;
+  position: relative;
+}
+
+.cv__experience-title:hover::before,
+.cv__education-title:hover::before,
+.cv__skills-title:hover::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 5px;
+  height: 100%;
+  background-color: var(--dark-red);
+}
+.cv__skills-item {
+    padding-bottom: 1.9em;
+  }
+
+/* ....................... SIDEBAR SECTION .............................. */
+.cv__sidebar {
+  width: 35%;
+  background-color: var(--dark-red);
+  padding-right: 3em;
+}
+
+/* Sidebar Title: This is the title of the sidebar */
+.cv__sidebar-title {
+  background-color: var(--sand);
+  margin-left: 0;
+  padding: 0.2em 1em;
+  font-size: inherit;
+}
+
+/* Sidebar Text and Items */
+.cv__sidebar-text,
+.cv__sidebar-item {
+  margin-left: 1.5em;
+  color: var(--white);
+  font-size: inherit;
+}
+
+
+/* ======================================================================== */
+/* ========================= FOOTER SECTION =============================== */
+/* ======================================================================== */
+
+/* Footer: This is the footer of the CV */
+.cv__footer {
+  background-color: var(--dark-red);
+}
+
+/* Social Icons: These are the social media icons in the footer */
+.cv__footer-social-icons {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  margin-top: 0;
+}
+
+/* Social Icons Items: These are the individual social media icons */
+.cv__footer-social-icons-item {
+  margin: 1rem;
+  margin-bottom: 0;
+}
+
+/* Social Icons Images: These are the images of the social media icons */
+.cv__footer-social-icons-item-img {
+  height: 40px;
+  transition: opacity 0.5s ease;
+}
+
+/* Social Icons Images Hover: This is the hover effect for the social media icons */
+.cv__footer-social-icons-item-img:hover {
+  opacity: 0.7;
+}
+
+/* Footer Update: This is the update text in the footer */
+.cv__footer-update {
+  text-align: center;
+  font-size: 1.4rem;
+  font-family: var(--raleway-regular);
+  color: var(--sand);
+  margin-bottom: 0;
+  font-size: 1rem;
+  padding-bottom: 1em;
+}
+
+
+
+
+/* ======================================================================== */
+/* ============================ MEDIAS QUERIES ============================ */
+/* ======================================================================== */
+
+
+/* Styles for large screens (desktops, laptops) */
+@media (max-width: 1024px) {
+  /* Adjusting the main container, navigation bar, sidebar, and footer width for large screens */
+  .cv__main,
+  .cv__nav,
+  .cv__footer {
+    min-width: 828px;
+  }
+  /* Adjusting the sidebar width for large screens */
+  .cv__sidebar {
+    width: 30%;
+  }
+  .cv__nav-list {
+    padding: 0;
+  }
+  .cv__nav-item {
+    margin: 5em;
+  }
+}
+
+/* Styles for medium screens (tablets) */
+@media (max-width: 768px) {
+  .cv {
+    min-width: 828px;
+  }
+  .cv__sidebar {
+    width: 30%;
+  }
+  .cv__sidebar-text {
+    font-size: 1rem;
+  }
+  .cv__sidebar-item {
+    font-size: 1.2rem;
+  }
+  .cv__sidebar-title {
+    font-size: 1.3rem;
+  }
+  .cv__header img {
+    height: 220px;
+  }
+  .cv__name {
+    font-size: 1.6rem;
+  }
+  .cv__nav-link {
+    font-size: 1.2rem;
+  }
+  .cv__nav-item {
+    margin: 2em;
+  }
+  .cv__nav-list {
+    margin: 1.1em 0;
+    padding: 0;
+    width: 100%;
+  }
+  .cv__experience-title {
+    font-size: 1.3rem;
+  }
+  .cv__education-title {
+    font-size: 1.3rem;
+  }
+  .cv__skills-title {
+    font-size: 1.3rem;
+  }
+  h4 {
+    font-size: 1.2rem;
+  }
+  p {
+    font-size: 1.1rem;
+  }
+  .cv__skills-item {
+    font-size: 1.1rem;
+    padding-bottom: 0.9em;
+  }
+  .cv__footer {
+    padding-bottom: 1em;
+  }
+  .cv__footer-social-icons-item-img {
+    height: 37px;
+  }
+}
+
+/* Styles for small screens (mobiles) */
+@media (max-width: 426px) {
+  .cv {
+    width: 100%;
+  }
+  .cv__nav {
+    height: 34vh;
+  }
+  .cv__header img {
+    height: 310px;
+  }
+  .cv__header {
+    min-height: 60vh;
+  }
+  .cv__name {
+    font-size: 3rem;
+  }
+  .cv__title {
+    font-size: 2.5rem;
+  }
+  .cv__nav-item {
+    display: block;
+    margin: 1.6em;
+  }
+  .cv__nav-link {
+    font-size: 2rem;
+  }
+  .cv__main {
+    flex-direction: column;
+  }
+  .cv__sidebar {
+    width: 100%;
+    max-height: 210vh;
+    padding: 0;
+  }
+  .cv__content {
+    width: 100%;
+  }
+  .cv__sidebar-text {
+    font-size: 1.8rem;
+  }
+  .cv__sidebar-item {
+    font-size: 1.8rem;
+  }
+  .cv__sidebar-title {
+    font-size: 2.5rem;
+  }
+  .cv__experience-title {
+    font-size: 2.5rem;
+  }
+  .cv__education-title {
+    font-size: 2.5rem;
+  }
+  .cv__skills-title {
+    font-size: 2.5rem;
+  }
+  .cv__experience,
+  .cv__education,
+  .cv__skills {
+    margin: 0;
+  }
+  h4 {
+    font-size: 2.2rem;
+  }
+  p {
+    font-size: 1.9rem;
+    margin: 1em;
+    text-align: justify;
+  }
+  .cv__skills-item {
+    font-size: 2rem;
+  }
+  .cv__skills-list {
+    margin: 0 1.5em 0 1.5em;
+  }
+  .cv__footer-update {
+    font-size: 1.8rem;
+  }
+  .cv__footer-social-icons-item-img {
+    height: 60px;
+  }
+}
