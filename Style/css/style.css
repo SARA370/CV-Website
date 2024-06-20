@@ -164,7 +164,7 @@ body {
 /* =============================  ARTICLE SECTION ================================ */
 /* =============================================================================== */
 .cv__content {
-  width: 65%;
+  width: 70%;
   background-color: var(--white);
   display: flex;
   flex-direction: column;
@@ -302,9 +302,6 @@ body {
   /* Adjusting the sidebar width for large screens */
   .cv__sidebar {
     width: 30%;
-  }
-  .cv__content{
-    width: 70%;
   }
   .cv__nav-list {
     padding: 0;
